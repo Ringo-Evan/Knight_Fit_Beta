@@ -67,6 +67,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startOrEnd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qG8-Ng-cta"/>
+                                    <action selector="startOrEndPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bpq-nl-eso"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aEk-CD-QUl">
@@ -74,6 +75,28 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyJ-Wt-tT0">
+                                <rect key="frame" x="62" y="584" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Select Music">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="musicSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4yp-ae-XQN"/>
+                                    <action selector="selectMusicPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wfB-Xo-CR2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvs-uw-SZU">
+                                <rect key="frame" x="245" y="584" width="149" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Knight Fit Movements">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="movementSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="acZ-HI-AwK"/>
+                                    <action selector="movementSelectPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hfC-lg-gXK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

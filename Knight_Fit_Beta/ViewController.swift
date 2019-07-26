@@ -27,6 +27,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func startOrEndPressed(_ sender: Any) {
+    }
+    
+    @IBAction func selectMusicPressed(_ sender: Any) {
+    }
+    @IBAction func movementSelectPressed(_ sender: Any) {
+    }
 }
 
