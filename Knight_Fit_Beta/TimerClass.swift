@@ -10,17 +10,24 @@ import Foundation
 
 class DisplayTimer{
     
+     private var observations = [ObjectIdentifier : Observation]()
+    
     //Time to countdown should always be # min * num sec
     //Currently hard coded to 5 misn
     let startTimeMin :Int
     let startTimeSec :Int
     var internalTimer : Timer
-    var secondsLeft :Int
+    var secondsLeft :Int = 0 {
+        didSet{timeUpdate()}
+    }
+    
+    
     
     convenience init(){
-        self.init(min: 5*60, sec: 0)
+        self.init(min: 1*60, sec: 0)
     }
-    init(min: Int, sec : Int){
+    
+    init(min: Int, sec : Int) {
         startTimeMin = min
         startTimeSec = sec
         secondsLeft = startTimeMin + startTimeSec
@@ -34,8 +41,57 @@ class DisplayTimer{
     }
     
     @objc func updateTimer() -> Int {
-        secondsLeft -= 1
-        return secondsLeft
+            secondsLeft -= 1
+            return secondsLeft
+        
     }
     
+}
+
+private extension DisplayTimer{
+    func timeUpdate(){
+        for (id, observation) in observations {
+            // If the observer is no longer in memory, we
+            // can clean up the observation for its ID
+            guard let observer = observation.observer else {
+                observations.removeValue(forKey: id)
+                continue
+                
+            }
+            
+            observer.displayTimer(self)
+            
+            
+        }
+        
+        
+    }
+}
+
+protocol DisplayTimerObserver : class {
+    func displayTimer(_ timer: DisplayTimer)
+}
+
+extension DisplayTimerObserver {
+    func displayTimer(_ timer: DisplayTimer){
+        
+    }
+}
+
+private extension DisplayTimer {
+    struct Observation {
+        weak var observer : DisplayTimerObserver?
+    }
+}
+
+extension DisplayTimer{
+    func addObserver(_ observer: DisplayTimerObserver){
+        let id = ObjectIdentifier(observer)
+        observations[id] = Observation(observer: observer)
+    }
+    
+    func removerObserver(_ observer: DisplayTimerObserver) {
+        let id = ObjectIdentifier(observer)
+        observations.removeValue(forKey: id)
+    }
 }

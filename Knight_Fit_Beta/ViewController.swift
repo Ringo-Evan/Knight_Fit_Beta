@@ -7,28 +7,44 @@
 //
 
 import UIKit
+import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     var displayTimer : DisplayTimer = DisplayTimer()
+    
+    var audioPlayer : AVAudioPlayer!
 
 
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var startOrEnd_Button: UIButton!
     @IBOutlet weak var timePickerSelect: UIPickerView!
     
     @IBOutlet weak var sectionPickerSelect: UIPickerView!
+    var isRunning : Bool = false
     
    
     @IBAction func startOrEnd(_ sender: Any) {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        displayTimer.addObserver(self)
         
         
         // Do any additional setup after loading the view.
     }
 
     @IBAction func startOrEndPressed(_ sender: Any) {
-        displayTimer.runTimer()
+        
+        if(!isRunning){
+            runTimer()
+           
+        }
+        else
+        {
+            
+            setUpTimer()
+        }
         
         
     }
@@ -38,5 +54,36 @@ class ViewController: UIViewController {
     @IBAction func movementSelectPressed(_ sender: Any) {
     }
     
+    func setUpTimer(){
+        
+        startOrEnd_Button.setTitle("start", for: .normal)
+        isRunning = false
+        displayTimer.removerObserver(self)
+        timeLabel.text = String(3*60)
+        displayTimer = DisplayTimer(min: 3*60, sec: 0)
+        displayTimer.addObserver(self)
+    }
+    
+    func runTimer(){
+        isRunning = true
+        displayTimer.runTimer()
+        startOrEnd_Button.setTitle("End", for: .normal)
+        timeLabel.text = String(displayTimer.secondsLeft)
+    }
+    
 }
 
+extension ViewController : DisplayTimerObserver{
+    func displayTimer(_ timer: DisplayTimer) {
+        if(displayTimer.secondsLeft > 0){
+            
+            timeLabel.text = "\(displayTimer.secondsLeft)"
+        }
+        else{
+            setUpTimer()
+        }
+        
+        
+    }
+    
+}
