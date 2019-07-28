@@ -71,6 +71,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         timeLabel.text = String(displayTimer.secondsLeft)
     }
     
+
     func playSound(selectedSoundFileName : String) {
         
         
@@ -87,6 +88,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
 }
 
+
 extension ViewController : DisplayTimerObserver{
     func displayTimer(_ timer: DisplayTimer) {
         if(displayTimer.secondsLeft > 0){
@@ -94,6 +96,7 @@ extension ViewController : DisplayTimerObserver{
             timeLabel.text = "\(displayTimer.secondsLeft)"
         }
         else{
+
             playSound(selectedSoundFileName: "rest")
             setUpTimer()
         }
