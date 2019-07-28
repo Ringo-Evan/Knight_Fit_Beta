@@ -103,6 +103,8 @@
                     </view>
                     <connections>
                         <outlet property="sectionPickerSelect" destination="aEk-CD-QUl" id="mmm-Zg-dS5"/>
+                        <outlet property="startOrEnd_Button" destination="C2f-SY-gRn" id="frY-k8-pc0"/>
+                        <outlet property="timeLabel" destination="fJQ-XO-XzN" id="AvG-8d-xc6"/>
                         <outlet property="timePickerSelect" destination="MwC-4p-Z61" id="DWa-xK-tPP"/>
                     </connections>
                 </viewController>

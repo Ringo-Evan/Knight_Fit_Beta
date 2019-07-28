@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C0E76A122EE27A4008B7F4F /* rest.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5C0E76A022EE27A4008B7F4F /* rest.wav */; };
 		5CB9F98822E35711006F8757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9F98722E35711006F8757 /* AppDelegate.swift */; };
 		5CB9F98A22E35711006F8757 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9F98922E35711006F8757 /* ViewController.swift */; };
 		5CB9F98D22E35711006F8757 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB9F98B22E35711006F8757 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C0E76A022EE27A4008B7F4F /* rest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rest.wav; sourceTree = "<group>"; };
 		5CB9F98422E35711006F8757 /* Knight_Fit_Beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Knight_Fit_Beta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CB9F98722E35711006F8757 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CB9F98922E35711006F8757 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C0E769F22EE2779008B7F4F /* soundFiles */ = {
+			isa = PBXGroup;
+			children = (
+				5C0E76A022EE27A4008B7F4F /* rest.wav */,
+			);
+			path = soundFiles;
+			sourceTree = "<group>";
+		};
 		5CB9F97B22E35711006F8757 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +73,7 @@
 				5CB9F99022E35712006F8757 /* LaunchScreen.storyboard */,
 				5CB9F99322E35712006F8757 /* Info.plist */,
 				BBF8294C22EB97B600355FDB /* TimerClass.swift */,
+				5C0E769F22EE2779008B7F4F /* soundFiles */,
 			);
 			path = Knight_Fit_Beta;
 			sourceTree = "<group>";
@@ -127,6 +138,7 @@
 			files = (
 				5CB9F99222E35712006F8757 /* LaunchScreen.storyboard in Resources */,
 				5CB9F98F22E35712006F8757 /* Assets.xcassets in Resources */,
+				5C0E76A122EE27A4008B7F4F /* rest.wav in Resources */,
 				5CB9F98D22E35711006F8757 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
