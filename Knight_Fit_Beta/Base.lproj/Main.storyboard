@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,87 +18,116 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MwC-4p-Z61">
-                                <rect key="frame" x="0.0" y="262" width="414" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <view opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="mtp-FQ-Pvs" userLabel="Display_View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="431"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJQ-XO-XzN">
+                                        <rect key="frame" x="184" y="205.33333333333334" width="46" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="fJQ-XO-XzN" firstAttribute="centerX" secondItem="mtp-FQ-Pvs" secondAttribute="centerX" id="r4G-Ot-mIF"/>
+                                    <constraint firstItem="fJQ-XO-XzN" firstAttribute="centerY" secondItem="mtp-FQ-Pvs" secondAttribute="centerY" id="tAg-2S-jfo"/>
+                                </constraints>
+                            </view>
+                            <view opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="QMN-p3-HTR" userLabel="Button_View">
+                                <rect key="frame" x="0.0" y="431" width="414" height="431"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8J-jz-Q2S">
+                                        <rect key="frame" x="308.66666666666669" y="14.999999999999998" width="90.333333333333314" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="JLF-bP-4nY">
+                                        <rect key="frame" x="10" y="50" width="404" height="381"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="top" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="iXp-WB-9QJ">
+                                                <rect key="frame" x="0.0" y="71.666666666666629" width="189.66666666666666" height="238"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1tY-M8-Od6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="149" height="50"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Knight Fit Movements">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="movementSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jgj-zG-s8Z"/>
+                                                            <action selector="movementSelectionPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iqK-9r-9j2"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyJ-Wt-tT0">
+                                                        <rect key="frame" x="0.0" y="94" width="88" height="50"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Select Music">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="musicSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4yp-ae-XQN"/>
+                                                            <action selector="selectMusicPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wfB-Xo-CR2"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2f-SY-gRn">
+                                                        <rect key="frame" x="0.0" y="188" width="50" height="50"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Vef-9S-rk2"/>
+                                                            <constraint firstAttribute="width" constant="50" id="y2o-cl-ZML"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Start">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="startOrEnd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qG8-Ng-cta"/>
+                                                            <action selector="startOrEndPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bpq-nl-eso"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="969-HZ-ZS1">
+                                                <rect key="frame" x="214.66666666666663" y="0.0" width="189.33333333333337" height="381"/>
+                                                <subviews>
+                                                    <pickerView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="aEk-CD-QUl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="189.33333333333334" height="190.66666666666666"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </pickerView>
+                                                    <pickerView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="MwC-4p-Z61">
+                                                        <rect key="frame" x="0.0" y="190.66666666666663" width="189.33333333333334" height="190.33333333333337"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </pickerView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJQ-XO-XzN">
-                                <rect key="frame" x="136" y="131" width="143" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8J-jz-Q2S">
-                                <rect key="frame" x="162" y="204" width="91" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyL-1E-jTz">
-                                <rect key="frame" x="61" y="584" width="88" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Select Music">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="musicSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kLu-fO-YIA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1tY-M8-Od6">
-                                <rect key="frame" x="245" y="584" width="149" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Knight Fit Movements">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="movementSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jgj-zG-s8Z"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2f-SY-gRn">
-                                <rect key="frame" x="62" y="648" width="86" height="147"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="startOrEnd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qG8-Ng-cta"/>
-                                    <action selector="startOrEndPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bpq-nl-eso"/>
-                                </connections>
-                            </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aEk-CD-QUl">
-                                <rect key="frame" x="240" y="648" width="158" height="168"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyJ-Wt-tT0">
-                                <rect key="frame" x="62" y="584" width="88" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Select Music">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="musicSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4yp-ae-XQN"/>
-                                    <action selector="selectMusicPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wfB-Xo-CR2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvs-uw-SZU">
-                                <rect key="frame" x="245" y="584" width="149" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Knight Fit Movements">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="movementSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="acZ-HI-AwK"/>
-                                    <action selector="movementSelectPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hfC-lg-gXK"/>
-                                </connections>
-                            </button>
+                                <constraints>
+                                    <constraint firstItem="JLF-bP-4nY" firstAttribute="leading" secondItem="QMN-p3-HTR" secondAttribute="leading" constant="10" id="1Yc-P7-HNS"/>
+                                    <constraint firstItem="JLF-bP-4nY" firstAttribute="top" secondItem="QMN-p3-HTR" secondAttribute="top" constant="50" id="1dn-DY-oDA"/>
+                                    <constraint firstItem="R8J-jz-Q2S" firstAttribute="top" secondItem="QMN-p3-HTR" secondAttribute="top" constant="15" id="CMx-vP-g6g"/>
+                                    <constraint firstAttribute="trailing" secondItem="JLF-bP-4nY" secondAttribute="trailing" id="Cfv-NX-rq1"/>
+                                    <constraint firstAttribute="bottom" secondItem="JLF-bP-4nY" secondAttribute="bottom" id="SXd-Ll-CWK"/>
+                                    <constraint firstAttribute="trailing" secondItem="R8J-jz-Q2S" secondAttribute="trailing" constant="15" id="UAH-Zp-HQU"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mtp-FQ-Pvs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1zy-Pk-0NR"/>
+                            <constraint firstItem="QMN-p3-HTR" firstAttribute="top" secondItem="mtp-FQ-Pvs" secondAttribute="bottom" id="Abn-pD-z91"/>
+                            <constraint firstItem="mtp-FQ-Pvs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BHg-V3-BdL"/>
+                            <constraint firstItem="QMN-p3-HTR" firstAttribute="top" secondItem="mtp-FQ-Pvs" secondAttribute="bottom" id="IOH-De-1Iw"/>
+                            <constraint firstItem="QMN-p3-HTR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IdY-J6-na7"/>
+                            <constraint firstItem="mtp-FQ-Pvs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Mhf-id-pLh"/>
+                            <constraint firstItem="QMN-p3-HTR" firstAttribute="height" secondItem="mtp-FQ-Pvs" secondAttribute="height" id="aQG-Fu-SuC"/>
+                            <constraint firstItem="QMN-p3-HTR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lZS-F6-uob"/>
+                            <constraint firstItem="QMN-p3-HTR" firstAttribute="width" secondItem="mtp-FQ-Pvs" secondAttribute="width" id="oKs-ph-hT3"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="QMN-p3-HTR" secondAttribute="bottom" id="pLX-TW-NH3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -110,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+            <point key="canvasLocation" x="131.8840579710145" y="136.60714285714286"/>
         </scene>
     </scenes>
 </document>

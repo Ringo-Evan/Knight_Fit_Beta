@@ -26,6 +26,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
    
     @IBAction func startOrEnd(_ sender: Any) {
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         displayTimer.addObserver(self)
@@ -49,9 +50,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
     }
     
-    @IBAction func selectMusicPressed(_ sender: Any) {
+    @IBAction func movementSelectionPressed(_ sender: Any) {
     }
-    @IBAction func movementSelectPressed(_ sender: Any) {
+    
+    @IBAction func selectMusicPressed(_ sender: Any) {
     }
     
     func setUpTimer(){

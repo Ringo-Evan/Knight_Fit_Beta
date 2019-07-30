@@ -299,6 +299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8HAF6V3FS7;
 				INFOPLIST_FILE = Knight_Fit_Beta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -316,6 +317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8HAF6V3FS7;
 				INFOPLIST_FILE = Knight_Fit_Beta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
