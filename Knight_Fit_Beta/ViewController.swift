@@ -16,6 +16,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var audioPlayer : AVAudioPlayer!
 
 
+    @IBOutlet weak var testText: UITextView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var startOrEnd_Button: UIButton!
     @IBOutlet weak var timePickerSelect: UIPickerView!
@@ -30,6 +31,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         displayTimer.addObserver(self)
+        testText.text = ""
         
         
         // Do any additional setup after loading the view.
@@ -93,9 +95,64 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 
 extension ViewController : DisplayTimerObserver{
     func displayTimer(_ timer: DisplayTimer) {
+        
+        var isPunching = false
+        var timeToCallAgain = 0
+        
         if(displayTimer.secondsLeft > 0){
-            
             timeLabel.text = "\(displayTimer.secondsLeft)"
+            
+            if !isPunching && Int.random(in: 1...4) == 1{
+                isPunching = true
+                timeToCallAgain = displayTimer.secondsLeft - 5
+                let numShots = Int.random(in: 1...5)
+                var shotString = ""
+                for i in 0 ... numShots{
+                    
+                    let shot = Int.random(in: 0...8)
+                    if shot == 0{
+                        continue
+                    }
+                    shotString.append(String(shot))
+                    
+                    let hieght = Int.random(in: 0...3)
+                    switch hieght {
+                    case 1:
+                        shotString.append("T")
+                    case 2:
+                        shotString.append("M")
+                    case 3:
+                        shotString.append("B")
+                    default:
+                        ()
+                        
+                    }
+                    
+                    let side = Int.random(in: 0...2)
+                    switch side {
+                    case 1:
+                        shotString.append("L")
+                    case 2:
+                        shotString.append("R")
+                    default:
+                        ()
+                    }
+                    
+                    if i != numShots{
+                        shotString.append(", ")
+                    }
+                }
+                if shotString != ""{
+                    testText.insertText(shotString + "\n")
+                    shotString = ""                    
+                }
+                
+            }
+            else if timeToCallAgain == displayTimer.secondsLeft{
+                isPunching = false
+            }
+            
+                
         }
         else{
 
